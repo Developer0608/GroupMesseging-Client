@@ -101,6 +101,22 @@ body {
   border-radius: 10px;
 }
 
+.message-action{
+  background-color: #9a9999;
+  width: 17%;
+  margin: 6px 0px;
+  border-radius: 17px;
+  color: white;
+  font-size: 0.7em;
+  padding: 6px;
+}
+
+.center {
+  text-align: center;
+  margin-left: 40%;
+  clear: both;
+}
+
 .left{
   float: left;
   clear: both;
@@ -153,37 +169,7 @@ body {
   background-color: #21a3df;
   color: white;
 }
-/* 
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-} */
-
+ 
 .navbar {
   overflow: hidden;
   background-color: #333;
@@ -263,4 +249,9 @@ p{
   margin: 4px 2px;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.users-action-info{
+  text-align: center;
+  padding: 5px;
 }

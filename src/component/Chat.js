@@ -56,7 +56,6 @@ function Chat(){
   }
   
   function OnLeaveHandler() {
-    console.log('Group Left.......');
     const room = localStorage.getItem('roomId');
     const email = localStorage.getItem('email');
 
@@ -76,16 +75,20 @@ function Chat(){
             </div>
           </div> 
           <a className="active" href="">{localStorage.getItem('email')}</a>
-          <input type="button" className="button" onClick={OnLeaveHandler} value="Leave"></input>
+          <input type="button" className="button" onClick={OnLeaveHandler} value="Leave">
+            
+          </input>
+          
       </div>
 
       <div className="container">
         {receivedMessage.map((message, index) => (
-          message.email === localStorage.getItem("email") 
-            ? <div key={index} className = "message right">{message.email} : {message.message}</div>
-            : <div key={index} className = "message left">{message.email} : {message.message}</div>
+           message.email 
+           ?  message.email === localStorage.getItem("email") 
+              ? <div key={index} className = "message right">{message.email} : {message.message}</div>
+              : <div key={index} className = "message left">{message.email} : {message.message}</div> 
+           :  <div className="message-action center">{message.message}</div>
         ))}
-       
       </div>
       <div className="send">
           <form action="#" id="send-container">
