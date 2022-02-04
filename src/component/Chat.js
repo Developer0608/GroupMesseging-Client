@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { socket } from "../utils/websocket";
+import { useHistory } from 'react-router-dom';
 
 function Chat(){
   const [message, setMessage] = useState('');
   const [receivedMessage, setReceivedMessage] = useState([]);
   const [receivedUser, setReceivedUser] = useState([]);
 
+  let history = useHistory();
   useEffect(() => {
     const roomId = localStorage.getItem('roomId');
     const email = localStorage.getItem('email');
@@ -32,10 +34,6 @@ function Chat(){
         setReceivedMessage([...receivedMessage, message])
         console.log('Message Received from Server : ', receivedMessage);
     });
-
-    // return () => {
-    //   socket.off("receiveMsg");
-    // }
   }, [receivedMessage, setReceivedMessage]);
 
   useEffect(() => {
@@ -57,6 +55,16 @@ function Chat(){
       roomId : localStorage.getItem('roomId'), email : localStorage.getItem('email')})
   }
   
+  function OnLeaveHandler() {
+    console.log('Group Left.......');
+    const room = localStorage.getItem('roomId');
+    const email = localStorage.getItem('email');
+
+    localStorage.clear();
+    socket.emit('leave', {roomId: room, email: email})
+    
+    return history.replace('/')
+  }
   return <>
       <div className="navbar">  
           <div className="dropdown">
@@ -67,7 +75,8 @@ function Chat(){
               ))}
             </div>
           </div> 
-          <a className="active" href="#home">{localStorage.getItem('email')}</a>
+          <a className="active" href="">{localStorage.getItem('email')}</a>
+          <input type="button" className="button" onClick={OnLeaveHandler} value="Leave"></input>
       </div>
 
       <div className="container">

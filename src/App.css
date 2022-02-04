@@ -5,7 +5,7 @@ body {
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-image: white;
+  background-image: url('https://wallpaperaccess.com/full/1336125.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -85,7 +85,7 @@ body {
 .container{
   width: 730px;
   max-height: 1000px;
-  background-color: rgb(16 14 14);;
+  background-color: rgb(242 247 247 / 92%);
   margin: auto;
   height: 60vh;
   padding: 33px;
@@ -94,11 +94,10 @@ body {
 }
 
 .message{
-  background-color: #ede5e5;;
+  background-color: #f1eeee;;
   width: 24%;
   padding: 10px;
-  margin: 17px 2px;
-  border: 2px solid black;
+  margin: 6px 2px;
   border-radius: 10px;
 }
 
@@ -114,7 +113,7 @@ body {
 
 .btn{
   cursor: pointer;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 6px;
   height: 37px;
 }
@@ -126,7 +125,7 @@ body {
 
 #messageInp{
   width: 92%;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 10px;
   height: 34px;
 }
@@ -246,4 +245,22 @@ body {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+p{
+  text-align: center;
+}
+
+.button {
+  background-color: #45d6e9;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 10px;
+  cursor: pointer;
 }
