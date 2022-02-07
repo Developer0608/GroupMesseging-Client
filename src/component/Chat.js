@@ -50,7 +50,9 @@ function Chat(){
 
   function onSendHandler(e) {
     e.preventDefault();
+    
     setMessage('');
+    
     socket.emit('message-send', {message, 
       roomId : localStorage.getItem('roomId'), email : localStorage.getItem('email')})
   }
@@ -64,6 +66,7 @@ function Chat(){
     
     return history.replace('/')
   }
+  
   return <>
       <div className="navbar">  
           <div className="dropdown">
